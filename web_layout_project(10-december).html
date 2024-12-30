@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar with Logo and Banner</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    /* Banner Image */
+    .banner {
+        width: 100%;
+        height: 600px;
+        background-image: url(lassi_banner.jpg); /* Replace 'banner.jpg' with the path to your banner image */
+        background-size: cover;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+    .banner img {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+        background-color: #e95858;
+        overflow: hidden;
+        height: 90px;
+        display:flex;
+        /* align-items: center; */
+        padding: 10px 20px;
+    }
+
+    .navbar img {
+        height: 90px;
+        width: 10%;
+        margin-right: 1350px; 
+        cursor: pointer;
+    }
+
+    .navbar a {
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+        text-decoration: none;
+        display: flex;
+        float: right;
+    }
+
+    .navbar a:hover {
+        background-color: #f09abb;
+        height: 25px;
+    
+        border-radius: 50px;
+        color: black;
+    }
+
+    /* .navbar a.active {
+        background-color: #4CAF50;
+        color: white;
+    } */
+
+    .marq-container {
+        height: 20px;
+        width: 100%;
+        display: flex;
+        margin-top:20px;
+        
+    }
+
+    .marq {
+        font-size: 20px;
+        font-weight: bold;
+        color: red; 
+    }
+
+    .photo{
+        height: 450px;
+        width: 100%;
+        background-color: transparent;
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .photos{
+        height: auto;
+        width: 33%;
+        border-radius: 15px;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        overflow: hidden;
+        background-color: transparent;
+    }
+    
+    .photos img{
+        height: 100%;
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0px 10px 10px black;
+        transition: transform .2s;
+        }
+        
+        .photos img:hover{
+        transform: scale(1.2);
+    }
+
+        .tenrupee1{
+        height: 600px;
+        width: 100%;
+        background-color: thistle; 
+    }
+
+    .dhairupee1{
+        height: 300px;
+        width: 100%;
+        background-color:  rgb(194, 138, 216);
+        display: flex;
+    }
+    
+    .dhairupee1 img{
+        height: 275px;
+        width: 30%;
+        margin: 10px 5px;
+        border-radius: 15px;
+        border: 3px solid black;
+        overflow: hidden;
+        transition: transform .2s;
+    }
+    .dhairupee1 img:hover{
+        transform: scale(0.9);
+    }
+    .dhairupee1 pre{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: 400;
+        font-size: larger;
+        height: 275px;
+        width: 70%;
+        overflow: hidden;
+    }
+    .dhairupee1 pre b{
+        font-size: 25px;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .dhairupee2{
+        height: 300px;
+        width: 100%;
+        background-color: rgb(194, 138, 216);
+        display:flex;
+    }
+    .dhairupee2 img{
+        height: 275px;
+        width: 30%;
+        margin: 10px 5px;
+        border-radius: 15px;
+        border: 3px solid black;
+        overflow: hidden;
+        transition: transform .2s;
+    }
+    .dhairupee2 img:hover{
+        transform: scale(0.9);
+    }
+    .dhairupee2 pre{
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: 400;
+        font-size: larger;
+        height: 275px;
+        width: 70%;
+    }
+    .dhairupee2 pre b{
+        font-size: 25px;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: auto;
+        /* margin-bottom: 40px; */
+    }
+    .btn button{
+        height: 30px;
+        width: 150px;
+        color: red;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: larger;
+        font-weight: 700;
+        box-shadow: 2px 5px black;
+        cursor: pointer;
+    }
+    .offer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: auto;
+    }
+    .offer h3{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 800;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .offer h3:hover{
+        color: red;
+    }
+    .dad{
+        height: auto;
+        width: 100%;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .childA{
+        height: auto;
+        width: 30%;
+        margin: 5PX;
+        border-radius: 25px;
+        background-color: transparent;
+    }
+    .childB{
+        height: auto;
+        width: 30%;
+        margin: 5PX;
+        border-radius: 25px;
+        background-color: transparent;
+    }
+    .childC{
+        height: auto;
+        width: 30%;
+        margin: 5PX;
+        border-radius: 25px;
+        background-color: transparent;
+    }
+    .childD{
+        height: auto;
+        width: 30%;
+        margin: 5PX;
+        border-radius: 25px;
+        background-color: transparent;
+    }
+    .oP{
+        height: 100%;
+        width: 100%;
+        border-radius: 25px;
+    }
+    .ideatils{
+        height:250px;
+        width: 100%;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .ACSH1{
+        height: auto;
+        width: 25%;
+        background-color: transparent; 
+        text-align: center;
+    }
+    .ACSH2{
+        height: auto;
+        width: 25%;
+        background-color: transparent; 
+        text-align: center;
+    }
+    .ACSH3{
+        height: auto;
+        width: 25%;
+        background-color: transparent;  
+        text-align: center;
+    }
+    .ACSH4{
+        height: auto;
+        width: 25%;
+        background-color: transparent; 
+        text-align: center;
+    }
+    footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icon {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: #ff9800; /* Change color on hover */
+}
+
+/* Icon colors */
+.facebook:hover {
+    color: #3b5998;
+}
+
+.twitter:hover {
+    color: #1da1f2;
+}
+
+.instagram:hover {
+    color: #c32aa3;
+}
+
+.linkedin:hover {
+    color: #0077b5;
+}
+    </style>
+</head>
+<body>
+
+    
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <img src="logo.jpg" alt="Logo"> 
+        <a href="#home" class="active">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+    
+    <!-- Banner Image -->
+    <div class="banner">
+       
+    </div>
+ 
+    <!-- Exclusive text  -->
+    <div class="marq-container">
+        <marquee class="marq" behavior="" direction="left"> ! Exclusive Offers! </marquee>
+    </div>
+ <!-- Three images  -->
+  <div class="photo">
+    <div class="photos"> <img src="kesar-lassi.jpg" alt="photo1"></div>
+    <div class="photos"> <img src="kesar.jpeg" alt="photo2"></div>
+    <div class="photos"> <img src="mango_lassi.jpg" alt="photo3"></div>
+  </div>
+  <!-- Text with Image  -->
+<div class="tenrupee">
+<div class="fiverupee1">
+
+<div class="dhairupee1">
+<img src="banana_lassi.jpg" alt="#">
+<pre> <b> Who doesn't like a mango lassi, right?</b>
+    But when you don't have good fresh mangos or can't find mango puree,
+ <b> why not try a Banana lassi?</b>
+  I ordered 2 in a restaurant in Udaipur because they were so good and it was because they had no mangos at the time -- what a find!
+
+ <b> Cook’s Note</b>
+  The servings are small in comparison to restaurants outside of India,
+  but I think it's probably a good idea to consume smaller amounts of good active bacteria in yogurt.
+  Use a good strong-flavored yogurt; it makes all the difference.
+  The milk is just to get things moving, so you can adjust to your preferred taste and texture.
+  Substitute honey for sugar if desired.
+
+</pre>
+</div>
+
+<br><br>
+
+</div>
+<div class="fiverupee2">
+
+<div class="dhairupee2">
+<pre> <b>Do you like Mango lassi?</b>
+
+   A favorite drink at Indian restaurants, they're easy to make at home.
+ Lassi come in all kinds of flavors, some are salty, some are sweet, some have mint, some have fruit. 
+ A mango lassi is basically a yogurt-based mango milkshake or smoothie.
+ 
+ Mango Lassi is a popular lassi variety made with Indian yogurt (dahi/ curd),ripe sweet mangoes and cardamoms.
+ A small amount of milk or fresh cream known as malai is also added for a creamy and rich feel.
+ This also helps balance the sourness of the yogurt.
+</pre>
+<img src="mango_lassi.jpg" alt="#">
+</div>
+</div>
+</div>
+
+<!-- Button  -->
+<div class="btn">
+   <a href="#"> <button>  Shop More ! </button></a>
+</div>  
+
+<!-- Exclusive text  -->
+<div class="marq-container">
+    <marquee class="marq" direction="left">  * 
+        15% OFF On First Order </marquee>
+</div>
+
+<!-- Offers Information  -->
+<div class="offer">
+<h3> Exclusive Offers Are Avaliable !</h3>
+</div>
+
+ <!-- Offer Images * 4  -->
+  <div class="dad">
+    <div class="childA">
+        <img class="oP" src="banana_lassi.jpg" alt="offer_image1"></div>
+    <div class="childB">
+        <img class="oP" src="mango_lassi2.jpg" alt="offer_image2"></div>
+    <div class="childC">
+        <img class="oP" src="lassi1.jpg" alt="offer_image3"></div>
+    <div class="childD">
+        <img class="oP" src="kesar-lassi.jpg" alt="offer_image4"></div>
+  </div>
+
+<!-- Internal Deatils  -->
+ <div class="ideatils">
+    <div class="ACSH1">
+        <div class="five1">
+            <h2>About Us</h2></div>
+        <div class="five2">
+            <h3> Who We Are </h3></div>
+        <div class="five3">
+            <h3> Blog</h3></div>
+        <div class="five4"> 
+            <h3>Work With Us</h3></div>
+        <div class="five5">
+            <h3>Contact Us</h3></div>
+    </div>
+    <div class="ACSH2">
+        <div class="five1">
+            <h2>LASSI Gang</h2></div>
+         <div class="five2">
+        <h3> BCK Lassi  </h3></div>
+    <div class="five3">
+        <h3>A1 Lassi Store </h3></div>
+    <div class="five4"> 
+        <h3>Suraj Lassi</h3></div>
+    </div>
+    <div class="ACSH3">
+        <div class="five1">
+            <h2>For Restaurants</h2></div>
+        <div class="five2">
+            <h3> Partner With Us </h3></div>
+        <div class="five3">
+            <h3> Apps For You </h3></div>
+    </div>
+    <div class="ACSH4">
+        <div class="five1">
+            <h2>FAQ</h2></div>
+        <div class="five2">
+            <h3> Customers Feedback</h3></div>
+        <div class="five3">
+            <h3> Privacy</h3></div>
+        <div class="five4"> 
+            <h3>Serving Quality</h3></div>
+        
+    </div>
+ </div>
+
+
+ <!-- Follow Us On  -->
+ <footer>
+    <div class="footer-container">
+        <h2>Follow Us On</h2>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" class="icon facebook">Facebook</a>
+            <a href="https://twitter.com" target="_blank" class="icon twitter">Twitter</a>
+            <a href="https://instagram.com" target="_blank" class="icon instagram">Instagram</a>
+            <a href="https://linkedin.com" target="_blank" class="icon linkedin">LinkedIn</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

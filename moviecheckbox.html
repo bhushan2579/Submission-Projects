@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+        #div {
+            height: auto;
+            width: 50%;
+            background-color: rgba(135, 206, 250, 0.767);
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            /* margin-top: -200px; */
+            margin-left: 500px;
+            border-radius: 25px;
+        }
+       .movies {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: auto;
+            margin-left: 500px;
+            width: 50%;
+            background-color: lightskyblue;
+            border-radius: 25px;
+        }
+        .heading{
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="heading">Movie Filter</h1>
+
+<div class="movies">
+    
+    <input type="checkbox" name="movietype" value="" id="action" onclick="moviefilter('action')">
+    <label for="1">Action</label>
+
+    <input type="checkbox" name="movietype" value="" id="horror" onclick="moviefilter('horror')">
+    <label for="2">Horror</label>
+
+    <input type="checkbox" name="movietype" value="" id="thriller" onclick="moviefilter('thriller')">
+    <label for="3">Thriller</label>
+
+</div>
+
+    <div id="div">
+
+    </div>
+    <script>
+        let data = [
+            {
+                movieName: "Squid Game",
+                actor: "Lee Jung-jae",
+                actress: "Wi Ha-jaoon",
+                category: "action"
+            },
+            {
+                movieName: "Red One",
+                actor: "Dwayne Johnson",
+                actress: "Lucy Liu",
+                category: "action"
+            },
+            {
+                movieName: "Pushpa: The Rule-Part 2",
+                actor: "Allu Arjun",
+                actress: "Rashmika Mandana",
+                category: "action"
+            },
+            {
+                movieName: "Game of Thrones",
+                actor: "Peter Dinklage",
+                actress: "Emilia Clarke",
+                category: "action"
+            },
+            {
+                movieName: "Extraction",
+                actor: "Chris Hemsworth",
+                actress: "Sara Rumao",
+                category: "thriller"
+            },
+            {
+                movieName: "The Family Man",
+                actor: "Manoj Bajpayee",
+                actress: "Samantha Ruth Prabhu",
+                category: "thriller"
+            },
+            {
+                movieName: "Inception",
+                actor: "Leonardo DiCaprio",
+                actress: "Marion Cotillard",
+                category: "thriller"
+            },
+            {
+                movieName: "Joker",
+                actor: "Joaquin Phoenix",
+                actress: "Zazie Beetz",
+                category: "thriller"
+            },
+            {
+                movieName: "The Sixth Sense",
+                actor: "Bruce Willis",
+                actress: "Toni Collette",
+                category: "thriller"
+            },
+            {
+                movieName: "Se7en",
+                actor: "Brad Pitt",
+                actress: "Gwyneth Paltrow",
+                category: "thriller"
+            },
+            {
+                movieName: "Kantaara",
+                actor: "Aakash",
+                actress: "Aakashi",
+                category: "horror"
+            },
+            {
+                movieName: "IT",
+                actor: "Pennywise",
+                actress: "Jocelyn Mattka",
+                category: "horror"
+            },
+            {
+                movieName: "Annabelle",
+                actor: "John",
+                actress: "Mia",
+                category: "horror"
+            },
+            {
+                movieName: "The Conjuring",
+                actor: "Patrick Wilson",
+                actress: "Vera Farmiga",
+                category: "horror"
+            },
+            {
+                movieName: "The Nun",
+                actor: "Demian Bichir",
+                actress: "Vera Farmiga",
+                category: "horror"
+            }
+        ]
+
+
+    function moviefilter(a) {
+
+
+        let text = document.getElementById('div')
+
+        if (a == "action") {
+
+            let mapdata = data.filter((val) => {
+                if (val.category == 'action') {
+                    return val.movieName
+                }
+
+            })
+
+            let doc = document.getElementById("action")
+            
+            if (doc.value == "") {
+                for (i = 0; i < mapdata.length; i++) {
+                    
+                    doc.value +=  mapdata[i].movieName +"<br>" 
+
+                }
+            }
+            else {
+                doc.value="";
+                for (i = 0; i < mapdata.length; i++) {
+                    
+                    doc.value +=  mapdata[i].movieName +"<br>"
+
+                }
+            }
+
+        }
+
+        if (a == "horror") {
+            let mapdata = data.filter((val) => {
+                if (val.category == 'horror') {
+                    return val.movieName
+                }
+
+            })
+
+            let doc = document.getElementById("horror")
+            
+            if (doc.value == "") {
+                for (i = 0; i < mapdata.length; i++) {
+
+                    doc.value +=  mapdata[i].movieName +"<br>" 
+
+                }
+            }
+            else {
+                doc.value="";
+                for (i = 0; i < mapdata.length; i++) {
+
+                    doc.value +=  mapdata[i].movieName +"<br>" 
+
+                }
+            }
+
+        }
+        if (a == "thriller") {
+            let mapdata = data.filter((val) => {
+                if (val.category == 'thriller') {
+                    return val.movieName
+                }
+
+            })
+
+            let doc = document.getElementById("thriller")
+            
+            if (doc.value == "") {
+                for (i = 0; i < mapdata.length; i++) {
+
+                    doc.value +=  mapdata[i].movieName +"<br>" 
+
+                }
+            }
+            else {
+                doc.value="";
+                for (i = 0; i < mapdata.length; i++) {
+
+                    doc.value +=  mapdata[i].movieName +"<br>" 
+
+                }
+            }
+
+        }
+
+        let checkboxes = document.getElementsByName('movietype');
+
+        let result = "";
+        for (var i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                    if (result == "") {
+                        result = checkboxes[i].value
+                    }
+                    else {
+                        result = result + checkboxes[i].value
+                    }
+                
+            }
+        }
+
+        text.innerHTML = result
+
+    }
+    </script>
+</body>
+
+</html>

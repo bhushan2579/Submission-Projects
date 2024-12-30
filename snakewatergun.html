@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let user= prompt("enter S , W or G");
+    let botI = Math.floor(Math.random() * 3);
+    let bot = ["S","W","G"][botI]     
+
+    const match = (bot, user) =>{
+        if(bot === user){
+            return "Nobody"
+        }
+        else if(bot === "S" && user === "W"){
+            return "bot"
+        }
+        else if(bot === "S" && user === "G"){
+            return "user"
+        }
+        else if(bot === "G" && user === "W"){
+            return "user"
+        }
+        else if(bot === "G" && user=== "S"){
+            return "bot"
+        }
+        else if(bot === "W" && user === "G"){
+            return "bot"
+        }
+        else if(bot === "W" &&  user === "S"){
+            return "User"
+        }
+    }
+   let result = match(bot ,user)
+    document.write(`Bot:${bot}  <br> User:${user} <br> The winner is : ${result }` )
+</script>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilterMovies</title>
+</head>
+
+<body id="body">
+    <button onclick="filterMovie('horror')">Horror</button>
+    <button onclick="filterMovie('action')">Action</button>
+    <button onclick="filterMovie('thriller')">Thriller</button>
+
+    <div id="div">
+
+    </div>
+
+    <script>
+        let data = [
+            {
+                movieName: "Squid Game",
+                actor: "Lee Jung-jae",
+                actress: "Wi Ha-jaoon",
+                category: "action"
+            },
+            {
+                movieName: "Red One",
+                actor: "Dwayne Johnson",
+                actress: "Lucy Liu",
+                category: "action"
+            },
+            {
+                movieName: "Pushpa: The Rule-Part 2",
+                actor: "Allu Arjun",
+                actress: "Rashmika Mandana",
+                category: "action"
+            },
+            {
+                movieName: "Game of Thrones",
+                actor: "Peter Dinklage",
+                actress: "Emilia Clarke",
+                category: "action"
+            },
+            {
+                movieName: "Extraction",
+                actor: "Chris Hemsworth",
+                actress: "Sara Rumao",
+                category: "thriller"
+            },
+            {
+                movieName: "The Family Man",
+                actor: "Manoj Bajpayee",
+                actress: "Samantha Ruth Prabhu",
+                category: "thriller"
+            },
+            {
+                movieName: "Inception",
+                actor: "Leonardo DiCaprio",
+                actress: "Marion Cotillard",
+                category: "thriller"
+            },
+            {
+                movieName: "Joker",
+                actor: "Joaquin Phoenix",
+                actress: "Zazie Beetz",
+                category: "thriller"
+            },
+            {
+                movieName: "The Sixth Sense",
+                actor: "Bruce Willis",
+                actress: "Toni Collette",
+                category: "thriller"
+            },
+            {
+                movieName: "Se7en",
+                actor: "Brad Pitt",
+                actress: "Gwyneth Paltrow",
+                category: "thriller"
+            },
+            {
+                movieName: "Kantaara",
+                actor: "Aakash",
+                actress: "Aakashi",
+                category: "horror"
+            },
+            {
+                movieName: "IT",
+                actor: "Pennywise",
+                actress: "Jocelyn Mattka",
+                category: "horror"
+            },
+            {
+                movieName: "Annabelle",
+                actor: "John",
+                actress: "Mia",
+                category: "horror"
+            },
+            {
+                movieName: "The Conjuring",
+                actor: "Patrick Wilson",
+                actress: "Vera Farmiga",
+                category: "horror"
+            },
+            {
+                movieName: "The Nun",
+                actor: "Demian Bichir",
+                actress: "Vera Farmiga",
+                category: "horror"
+            }
+        ]
+
+
+
+        function filterMovie(a) {
+
+            if (a == "action") {
+
+                let mapdata = data.map((val) => {
+                    if (val.category == 'action') {
+                        return val.movieName
+                    }
+                    else {
+                        return 0
+                    }
+                })
+
+                createelement(mapdata)
+
+                console.log(mapdata, "mapdata")
+
+            }
+            else if (a == "horror") {
+
+                let mapdata = data.map((val) => {
+                    if (val.category == 'horror') {
+                        return val.movieName
+                    }
+                    else {
+                        return 0
+                    }
+
+                })
+
+                createelement(mapdata)
+
+                console.log(mapdata, "mapdata")
+            }
+
+            else if (a == "thriller") {
+
+                let mapdata = data.map((val) => {
+                    if (val.category == 'thriller') {
+                        return val.movieName
+                    }
+                    else {
+                        return 0
+                    }
+                })
+
+                createelement(mapdata)
+
+                console.log(mapdata, "mapdata")
+            }
+
+
+
+            // document.getElementsById('body') .body.style.backgroundColor='red'
+            function createelement(a) {
+                let input = document.getElementById('div')
+                input.style.height = "auto"
+                input.style.width = "30%"
+                input.style.backgroundColor = "yellow"
+                input.style.textAlign = "center"
+                input.style.display = "flex"
+                input.style.justifyContent = "center"
+                input.style.alignItems = "center"
+
+
+                input.innerHTML = ""
+                for (i = 0; i < a.length; i++) {
+                    if (a[i] != 0) {
+                        if (input.innerHTML=="") {
+                            input.innerHTML =  a[i]
+                        }
+                        else{
+                            input.innerHTML = input.innerHTML + "<br>" + a[i]
+                        }
+                        
+                    }
+                }
+
+
+
+            }
+
+        }
+    </script>
+</body>
+
+</html>
