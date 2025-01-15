@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    //  let value =  prompt("Enter Your Name : ") ;
+    //  let arr = ["bhushan","jonny","scout","snax","zgod"]
+    
+    //   if (arr.includes(value) == true) {
+    //    console.log("Join The Match")
+
+    //  let otp = otpgenerator();
+    //     console.log("This Is Your MatchCode : " + otp)
+    //   }  
+      
+    //   else {
+    //     console.logl("Invalid Player ")
+    //   }
+
+
+    //   function otpgenertaor(){
+    //     return Math.floor(100000 + Math.random() * 900000);
+    //   }
+
+    //   function correctotp(otp){
+    //         let map = prompt("Enter Your MatchCode:")
+    //         if(map == otp){
+    //             console.log("code is accepted")
+    //         }
+    //         else{
+    //             console.log("code is not valid")
+    //         }
+    //     }
+
+  
+
+    let value = prompt("Enter Your Name : "); 
+    let arr = ["bhushan", "jonny", "scout", "snax", "zgod"];
+    
+    if (arr.includes(value) == true) {
+        console.log("Join The Match");
+        let otp = otpgenerator(); 
+      console.log("This Is Your MatchCode : " + otp);
+        correctotp(otp)
+    } else {
+        console.log("Invalid Player");
+    }
+
+    function otpgenerator() {
+        
+        return Math.floor(100000 + Math.random() * 900000);
+    }
+
+    function correctotp(otp) {
+        let map = prompt("Enter Your MatchCode:");
+        if (map == otp) {
+            console.log("Code is correct");
+        } else {
+            console.log("Code is incorrect");
+        }
+    }
+    </script>
+</body>
+</html>
