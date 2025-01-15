@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital-clock</title>
+    <style>
+        body{
+            background-color: #000;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+        h1{
+            /* background: linear-gradient(to right, rgb(187, 19, 19),rgb(248, 248, 50)); */
+            color:white;
+            /* display: flex;
+            flex-direction: column-reverse; */
+        }
+        .digital-clock{
+            height: 30%;
+            width: 70%;
+            background-color: #000;
+            color: white;
+            display: flex;
+            border-radius: 2rem;
+            user-select: none;
+            padding: 0 2rem;
+            border: 0.5rem solid #2d2d2d;
+            flex-direction: row;
+        }
+
+        .week{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 3rem;
+            color: #2d2d2d;
+            font-weight: bold;
+            font-size: 1.2rem;
+            font-family: sans-serif;
+        }
+
+        .week .active{
+            color: white;
+
+        }
+
+        .time {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding-left: 400PX;
+        }
+
+        .hour,
+        .min,
+        .dot {
+            display: inline-block;
+            font-size: 13rem;
+            /* color: white; */
+        }
+
+        .min{
+            display: math;
+        }
+
+        .invsible{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- <h1>Digital-Clock</h1> -->
+    
+    <div class="digital-clock">
+        <div class="week">
+            <div class="active">SUNDAY</div>
+            <div>MONDAY</div>
+            <div>TUEDAY</div>
+            <div>WEDNESDAY</div>
+            <div>THURSDAY</div>
+            <div>FRIDAY</div>
+            <div>SATURDAY</div>
+        </div>
+        <div class="time">
+            <div class="hour">12</div>
+            <div class="dot">:</div>
+            <div class="min">00</div>
+        </div>
+    </div>
+</body>
+<script>
+    const $ = (selector) => {
+        return document.querySelector(selector)
+    }
+    let hour = $('.hour')
+    let dot = $('.dot')
+    let min = $('.min')
+    let week = $('.week')
+
+    let showDot = true;
+
+    function update(){
+        showDot = !showDot;
+        const now = new Date();
+
+        if (showDot) {
+            dot.classList.add('invisible')
+        } else {
+            dot.classList.remove('invisible')
+        }
+        hour.textContent = String(now.getHours())
+        .padStart(2, '0');
+        min.textContent = String(now.getMinutes())
+        .padStart(2, '0')
+
+        Array
+        .from (week.children)
+        .forEach( 
+        (ele) => {
+            ele.classList.remove('active');
+        }
+    );
+    week
+    .children[now.getDay()]
+    .classList
+    .add ('active')
+    }
+
+    setInterval(update, 500);
+</script>
+</html>

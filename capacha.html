@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>This Is Your Capcha</h2>
+    </div>
+    <script>
+        let data = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM@#$&*';
+        let capcha = ''
+        for(let i =0; i<=5; i++){
+            capcha = capcha + data.charAt(Math.ceil(Math.random()*data.length))
+        }
+        document.write(capcha," : capcha")
+        console.log(capcha," : capcha")
+    
+        console.log(data.length,"length")
+    </script>
+</body>
+</html>
